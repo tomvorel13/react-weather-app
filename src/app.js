@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'normalize.css/normalize.css';
-import './styles/styles.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./weather-app";
+import "normalize.css/normalize.css";
+import "./styles/styles.scss";
 
-ReactDOM.render(<p>This is a boilerplate!</p>, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));

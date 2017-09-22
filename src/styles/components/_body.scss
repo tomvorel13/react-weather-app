@@ -1,0 +1,40 @@
+.main {
+  //   background: url("./img/background2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  padding: 50px;
+  max-width: 100%;
+  text-align: center;
+}
+#mainHeading {
+  font-size: 4.5em;
+  font-family: "Poppins", sans-serif;
+  color: #f4f7f9;
+  text-shadow: -1px -1px 15px rgba(150, 150, 150, 0.95);
+}
+
+.weatherDesc,
+.cityName,
+.tempText,
+.humidText,
+.pressText {
+  font-size: 3.5em;
+  color: #f4f7f9;
+  text-shadow: -1px -1px 15px rgba(150, 150, 150, 0.95);
+  font-family: "Roboto", sans-serif;
+}
+
+.cityName {
+  font-size: 1.7em;
+  text-transform: uppercase;
+}
+
+.tempText {
+  font-size: 4em;
+}
+
+.humidText,
+.pressText {
+  font-size: 1.7em;
+}
