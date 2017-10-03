@@ -9,23 +9,29 @@ class SearchBar extends Component {
     };
 
     this.onHandleChange = this.onHandleChange.bind(this);
+    this.onHandleSubmit = this.onHandleSubmit.bind(this);
   }
 
   render() {
     return (
-      <input
-        id="mainInput"
-        value={this.state.city}
-        onChange={this.onHandleChange}
-        className="form-control my-3"
-        type="text"
-      />
+      <form>
+        <input onChange={this.onHandleChange} type="text" />
+        <button onClick={this.onHandleSubmit} type="submit">
+          Search!
+        </button>
+      </form>
     );
   }
 
-  onHandleChange(env) {
-    const city = env.currentTarget.value;
-    this.setState({ city });
+  onHandleChange(e) {
+    this.setState({
+      city: e.target.value
+    });
+  }
+
+  onHandleSubmit(e) {
+    e.preventDefault();
+    const city = this.state.city;
     this.props.onSearchTermChange(city);
   }
 }

@@ -20,10 +20,6 @@ class App extends Component {
     this.citySearch = this.citySearch.bind(this);
   }
 
-  componentDidMount() {
-    this.axioSearch();
-  }
-
   axioSearch(city) {
     let cityName = city || this.state.city;
     axios
@@ -53,20 +49,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="main">
-          <h1 id="mainHeading">WeatherNOW</h1>
+      <div>
+        <div>
+          <h1>WeatherNOW</h1>
           <SearchBar onSearchTermChange={this.citySearch} />
           <br />
-          <h2 className="weatherDesc">{this.state.weather}</h2>
-          <h3 className="cityName">
+          <h2>{this.state.weather}</h2>
+          <h3>
             {this.state.city}, {this.state.country}
           </h3>
-          <p className="tempText">
-            {Math.round(this.state.temperature - 273.15)} °C
-          </p>
-          <p className="humidText">Humidity: {this.state.humidity} %</p>
-          <p className="pressText">{this.state.pressure} hPa</p>
+          <p>{Math.round(this.state.temperature - 273.15)} °C</p>
+          <p>Humidity: {this.state.humidity} %</p>
+          <p>{this.state.pressure} hPa</p>
         </div>
       </div>
     );
