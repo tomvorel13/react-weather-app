@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import SearchBar from "./Components/search-bar";
+import SearchBar from "./search-bar";
 
 const API_KEY = "c5c58670c32db956ece142ae13d1759f";
 
@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      city: "London",
+      city: "",
       country: "",
       temperature: 0,
       humidity: 0,
@@ -38,9 +38,11 @@ class App extends Component {
           });
         }.bind(this)
       )
-      .catch(function(error) {
-        console.log(error);
-      });
+      .catch(
+        function(error) {
+          this.setState({ city: 404 });
+        }.bind(this)
+      );
   }
 
   citySearch(city) {
@@ -54,13 +56,22 @@ class App extends Component {
           <h1>WeatherNOW</h1>
           <SearchBar onSearchTermChange={this.citySearch} />
           <br />
-          <h2>{this.state.weather}</h2>
-          <h3>
-            {this.state.city}, {this.state.country}
-          </h3>
-          <p>{Math.round(this.state.temperature - 273.15)} °C</p>
-          <p>Humidity: {this.state.humidity} %</p>
-          <p>{this.state.pressure} hPa</p>
+          {(this.state.city === 404 && (
+            <div>
+              <h1>Location not found!</h1>
+            </div>
+          )) ||
+            (this.state.city !== "" && (
+              <div>
+                <h2>{this.state.weather}</h2>
+                <h3>
+                  {this.state.city}, {this.state.country}
+                </h3>
+                <p>{Math.round(this.state.temperature - 273.15)} °C</p>
+                <p>Humidity: {this.state.humidity} %</p>
+                <p>{this.state.pressure} hPa</p>
+              </div>
+            ))}
         </div>
       </div>
     );

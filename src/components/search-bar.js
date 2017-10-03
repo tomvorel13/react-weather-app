@@ -15,7 +15,12 @@ class SearchBar extends Component {
   render() {
     return (
       <form>
-        <input onChange={this.onHandleChange} type="text" />
+        <input
+          onChange={this.onHandleChange}
+          placeholder="Get current weather..."
+          value={this.state.city}
+          type="text"
+        />
         <button onClick={this.onHandleSubmit} type="submit">
           Search!
         </button>
@@ -24,8 +29,10 @@ class SearchBar extends Component {
   }
 
   onHandleChange(e) {
+    const city = e.target.value;
+    city.trim();
     this.setState({
-      city: e.target.value
+      city
     });
   }
 
@@ -33,6 +40,7 @@ class SearchBar extends Component {
     e.preventDefault();
     const city = this.state.city;
     this.props.onSearchTermChange(city);
+    this.setState({ city: "" });
   }
 }
 

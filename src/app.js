@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./weather-app";
+import App from "./components/weather-app";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 
