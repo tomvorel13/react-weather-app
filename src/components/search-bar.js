@@ -14,17 +14,24 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form>
-        <input
-          onChange={this.onHandleChange}
-          placeholder="Get current weather..."
-          value={this.state.city}
-          type="text"
-        />
-        <button onClick={this.onHandleSubmit} type="submit">
-          Search!
-        </button>
-      </form>
+      <div>
+        <form>
+          <input
+            className="mainInput"
+            onChange={this.onHandleChange}
+            placeholder="Get current weather..."
+            value={this.state.city}
+            type="text"
+          />
+          <button
+            className="searchButton"
+            onClick={this.onHandleSubmit}
+            type="submit"
+          >
+            Get Weather!
+          </button>
+        </form>
+      </div>
     );
   }
 

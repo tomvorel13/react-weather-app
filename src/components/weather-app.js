@@ -52,27 +52,38 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
-          <h1>WeatherNOW</h1>
-          <SearchBar onSearchTermChange={this.citySearch} />
-          <br />
-          {(this.state.city === 404 && (
-            <div>
-              <h1>Location not found!</h1>
-            </div>
-          )) ||
-            (this.state.city !== "" && (
-              <div>
-                <h2>{this.state.weather}</h2>
-                <h3>
+        <SearchBar onSearchTermChange={this.citySearch} />
+        <br />
+        {(this.state.city === 404 && (
+          <div>
+            <h1>Location not found!</h1>
+          </div>
+        )) ||
+          (this.state.city !== "" && (
+            <div className="container">
+              <div className="data">
+                <h2 className="data__h2">{this.state.weather}</h2>
+                <h3 className="data__h3">
                   {this.state.city}, {this.state.country}
                 </h3>
-                <p>{Math.round(this.state.temperature - 273.15)} °C</p>
-                <p>Humidity: {this.state.humidity} %</p>
-                <p>{this.state.pressure} hPa</p>
+                <p className="data__h3">
+                  {Math.round(this.state.temperature - 273.15)} °C
+                </p>
+                <p className="data__p">
+                  <img
+                    className="data__h-icon"
+                    src="img/humidity-icon.png"
+                  />{" "}
+                  {this.state.humidity} % |{" "}
+                  <img
+                    className="data__p-icon"
+                    src="img/pressure-icon.png"
+                  />{" "}
+                  {this.state.pressure} hPa
+                </p>
               </div>
-            ))}
-        </div>
+            </div>
+          ))}
       </div>
     );
   }

@@ -1,1 +1,18 @@
+.mainInput {
+  background: $off-white;
+  border: none;
+  display: block;
+  height: $xl-size;
+  padding: $s-size;
+  width: 100%;
+}
 
+.searchButton {
+  background: #3399ff;
+  border: none;
+  color: $white;
+  display: block;
+  font-size: $m-size;
+  padding: $s-size;
+  width: 100%;
+}

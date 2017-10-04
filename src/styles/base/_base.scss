@@ -1,17 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: $m-size;
-    background-color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+  background-color: white;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button:disabled {
-    cursor: default;
+  cursor: default;
 }

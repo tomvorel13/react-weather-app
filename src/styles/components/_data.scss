@@ -1,0 +1,28 @@
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.data__h2 {
+  font-size: $xl-size;
+  margin: $m-size;
+}
+
+.data__h3 {
+  font-size: $l-size;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.data__p {
+  font-size: 2rem;
+}
+
+.data__h-icon,
+.data__p-icon {
+  height: $m-size;
+  margin: 0 auto;
+  width: $m-size;
+}
