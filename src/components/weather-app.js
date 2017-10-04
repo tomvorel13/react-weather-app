@@ -24,7 +24,7 @@ class App extends Component {
     let cityName = city || this.state.city;
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}&q=${cityName}`
+        `https://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}&q=${cityName}`
       )
       .then(
         function(response) {
