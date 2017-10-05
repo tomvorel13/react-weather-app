@@ -3,7 +3,10 @@
   border: none;
   display: block;
   height: $xl-size;
+  font-family: "Abel", sans-serif;
+  font-size: 2rem;
   padding: $s-size;
+  text-align: center;
   width: 100%;
 }
 
@@ -12,7 +15,8 @@
   border: none;
   color: $white;
   display: block;
-  font-size: $m-size;
+  font-family: "Abel", sans-serif;
+  font-size: 2rem;
   padding: $s-size;
   width: 100%;
 }

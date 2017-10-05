@@ -19,7 +19,7 @@ class SearchBar extends Component {
           <input
             className="mainInput"
             onChange={this.onHandleChange}
-            placeholder="Get current weather..."
+            placeholder="Enter city name..."
             value={this.state.city}
             type="text"
           />

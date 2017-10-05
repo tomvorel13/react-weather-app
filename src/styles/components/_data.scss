@@ -1,24 +1,31 @@
 .data {
+  color: $off-white;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
   text-align: center;
   width: 100%;
+  text-shadow: 2px 2px 8px $dark-blue;
+}
+
+.data__h1 {
+  font-size: $xl-size;
+  margin: $m-size;
+  font-family: "Abel", sans-serif;
 }
 
 .data__h2 {
-  font-size: $xl-size;
-  margin: $m-size;
-}
-
-.data__h3 {
+  font-family: "Abel", sans-serif;
   font-size: $l-size;
   font-weight: normal;
-  text-transform: uppercase;
+  #uppercase {
+    text-transform: uppercase;
+  }
 }
 
 .data__p {
+  font-family: "Abel", sans-serif;
   font-size: 2rem;
 }
 

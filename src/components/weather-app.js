@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import classnames from "classnames";
 import SearchBar from "./search-bar";
+import NotFoundPage from "./not-found-page";
+import animate from "animate.css";
 
 const API_KEY = "c5c58670c32db956ece142ae13d1759f";
 
@@ -66,21 +68,19 @@ class App extends Component {
         <div className="loader">
           <img className={classes} src="img/spinner.gif" />
         </div>
-        {(this.state.city === 404 && (
-          <div>
-            <h1>Location not found!</h1>
-          </div>
-        )) ||
+        {(this.state.city === 404 && <NotFoundPage />) ||
           (this.state.city !== "" && (
             <div className="container">
-              <div className="data">
-                <h2 className="data__h2">{this.state.weather}</h2>
-                <h3 className="data__h3">
-                  {this.state.city}, {this.state.country}
-                </h3>
-                <p className="data__h3">
+              <div className="data animated lightSpeedIn">
+                <h1 className="data__h1">
+                  {" "}
                   {Math.round(this.state.temperature - 273.15)} °C
-                </p>
+                </h1>
+                <h2 className="data__h2">
+                  {this.state.city},{" "}
+                  <span id="uppercase">{this.state.country}</span>
+                </h2>
+                <h2 className="data__h2">{this.state.weather}</h2>
                 <p className="data__p">
                   <img
                     className="data__h-icon"
