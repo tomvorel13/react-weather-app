@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import classnames from "classnames";
 import SearchBar from "./search-bar";
 
 const API_KEY = "c5c58670c32db956ece142ae13d1759f";
@@ -14,7 +15,8 @@ class App extends Component {
       temperature: 0,
       humidity: 0,
       pressure: 0,
-      weather: ""
+      weather: "",
+      spinner: false
     };
 
     this.citySearch = this.citySearch.bind(this);
@@ -46,14 +48,24 @@ class App extends Component {
   }
 
   citySearch(city) {
-    this.axioSearch(city);
+    this.setState({ city: "", spinner: true });
+    setTimeout(() => {
+      this.axioSearch(city);
+      this.setState({
+        spinner: false
+      });
+    }, 1000);
   }
 
   render() {
+    let classes = classnames("loader__img", { active: this.state.spinner });
     return (
-      <div>
+      <div className="body">
         <SearchBar onSearchTermChange={this.citySearch} />
         <br />
+        <div className="loader">
+          <img className={classes} src="img/spinner.gif" />
+        </div>
         {(this.state.city === 404 && (
           <div>
             <h1>Location not found!</h1>

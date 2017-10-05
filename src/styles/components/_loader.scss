@@ -1,0 +1,19 @@
+.loader {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.loader__img {
+  display: none;
+  margin-top: 10rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+.active {
+  display: block;
+}
