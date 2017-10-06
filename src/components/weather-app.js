@@ -71,7 +71,7 @@ class App extends Component {
         {(this.state.city === 404 && <NotFoundPage />) ||
           (this.state.city !== "" && (
             <div className="container">
-              <div className="data animated lightSpeedIn">
+              <div className="data animated fadeIn">
                 <h1 className="data__h1">
                   {" "}
                   {Math.round(this.state.temperature - 273.15)} °C

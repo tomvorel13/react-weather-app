@@ -35,3 +35,23 @@
   margin: 0 auto;
   width: $m-size;
 }
+
+@media (min-width: $desktop-breakpoint) {
+  .data__h1 {
+    font-size: 8rem;
+  }
+
+  .data__h2 {
+    font-size: 6rem;
+  }
+
+  .data__p {
+    font-size: 4rem;
+  }
+
+  .data__h-icon,
+  .data__p-icon {
+    height: $l-size;
+    width: $l-size;
+  }
+}
