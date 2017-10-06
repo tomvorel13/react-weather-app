@@ -2,7 +2,7 @@ import React from "react";
 
 const NotFoundPage = () => {
   return (
-    <div>
+    <div className="animated fadeIn">
       <h1>Location not found!</h1>
     </div>
   );
