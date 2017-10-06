@@ -6,3 +6,9 @@ h1 {
   text-align: center;
   text-shadow: 2px 2px 8px $dark-blue;
 }
+
+@media (min-width: $desktop-breakpoint) {
+  h1 {
+    font-size: 8rem;
+  }
+}
